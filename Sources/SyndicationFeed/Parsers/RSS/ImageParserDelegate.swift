@@ -1,6 +1,6 @@
 //
 //  ImageParserDelegate.swift
-//  PodcastFeed
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 12/7/25.
 //

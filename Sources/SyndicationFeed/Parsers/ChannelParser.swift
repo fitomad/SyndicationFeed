@@ -1,6 +1,6 @@
 //
 //  ChannelParser.swift
-//  PodcastFeed
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 11/7/25.
 //
@@ -12,7 +12,6 @@ typealias ChannelHanler = TagHandler & ChannelTagHandler
 final class ChannelParser: NSObject {
 	private let parser: XMLParser
 	weak var delegate: (any ChannelParserDelegate)?
-	
 	private var nestedXMLDelegate: (any XMLParserDelegate)?
 	
 	private var currentTag = ""

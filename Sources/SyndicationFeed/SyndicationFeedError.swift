@@ -1,6 +1,6 @@
 //
-//  PodcastFeedParserError.swift
-//  PodcastFeed
+//  SyndicationFeedError.swift
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 15/10/24.
 //

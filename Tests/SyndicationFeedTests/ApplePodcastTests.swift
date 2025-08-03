@@ -12,7 +12,7 @@ import Testing
 
 @Suite("Apple Podcast (iTunes) tests.")
 struct ApplePodcastTests {
-	@Test("Most common iTunes feed fields")
+	@Test("Most common iTunes feed fields", .tags(.applePodcast))
 	func commonApplePodcastFeed() async throws {
 		guard let feedData = FeedTestFile.applePodcast.data(using: .utf8) else {
 			throw FeedTestFile.Failure.malformedContent

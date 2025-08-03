@@ -1,6 +1,6 @@
 //
 //  LiveItemParser.swift
-//  PodcastFeed
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 12/7/25.
 //
@@ -11,7 +11,6 @@ final class LiveItemParser: NSObject {
 	private var currentElement = ""
 	private var currentCharacters = ""
 	private var currentAttributes = [String : String]()
-	private var liveItemProperties = [String : String]()
 	
 	private var rootXMLDelegate: XMLParserDelegate?
 	private weak var rootXMLParser: XMLParser?

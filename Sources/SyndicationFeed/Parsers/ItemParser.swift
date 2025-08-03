@@ -1,6 +1,6 @@
 //
 //  ItemParser.swift
-//  PodcastFeed
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 11/7/25.
 //
@@ -44,6 +44,7 @@ final class ItemParser: NSObject {
 	
 	deinit {
 		nestedXMLDelegate = nil
+		handlers.removeAll()
 	}
 	
 	private func createChain() {
@@ -89,8 +90,6 @@ extension ItemParser: XMLParserDelegate {
 			episode.podcasting?.alternateEnclosures = itemAlternateEnclosures.isEmpty ? nil : itemAlternateEnclosures
 			episode.podcasting?.values = itemValues.isEmpty ? nil : itemValues
 			
-			handlers.removeAll()
-			
 			delegate?.parser(self, didFinishParse: episode, withErrors: parseFailures)
 			restoreParserDelegate()
 		} else {
@@ -113,7 +112,7 @@ extension ItemParser: AlternateEnclosureParserDelegate {
 	}
 	
 	func parser(_ parser: AlternateEnclosureParser, didFailWithError error: SyndicationFeedError) {
-		
+		parseFailures.append(error)
 	}
 }
 
@@ -123,6 +122,6 @@ extension ItemParser: ValueParserDelegate {
 	}
 	
 	func parser(_ parser: ValueParser, didFailWithError error: SyndicationFeedError) {
-
+		parseFailures.append(error)
 	}
 }

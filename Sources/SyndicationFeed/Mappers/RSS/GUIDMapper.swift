@@ -1,6 +1,6 @@
 //
 //  GUIDMapper.swift
-//  PodcastFeed
+//  SyndicationFeed
 //
 //  Created by Adolfo Vera Blasco on 14/7/25.
 //
