@@ -9,15 +9,19 @@ import Foundation
 
 final class ItemApplePodcastHandler: TagHandler {
 	var details = Item.Apple()
-	var nextHandler: (any TagHandler)?
+	weak var nextHandler: (any TagHandler)?
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) {
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError) {
+		guard Apple.itemTags.contains(tagName) else {
+			try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+			return
+		}
+		
 		switch tagName {
 			case Apple.Duration.tagName:
 				let mapper = AppleDurationMapper()
-				if let seconds = try? mapper.mapToDuration(from: text) {
-					details.duration = seconds
-				}
+				let seconds = try mapper.mapToDuration(from: text)
+				details.duration = seconds
 			case Apple.Image.tagName:
 				details.imageURL = URL(string: text)
 			case Apple.Explicit.tagName:
@@ -33,7 +37,7 @@ final class ItemApplePodcastHandler: TagHandler {
 			case Apple.Block.tagName:
 				details.isBlocked = (text.lowercased() == "yes")
 			default:
-				nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}
 	}
 }

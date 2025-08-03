@@ -9,18 +9,17 @@ import Foundation
 
 final class ChannelApplePodcastHandler: TagHandler {
 	private var details = Channel.Apple()
-	var nextHandler: (any TagHandler)?
+	weak var nextHandler: (any TagHandler)?
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) {
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError) {
 		switch tagName {
 			case Apple.Image.tagName:
 				let mapper = AppleImageMapper()
-				if let url = try? mapper.mapToImage(from: attributesDict) {
-					details.imageURL = url
-				}
+				let url = try mapper.mapToImage(from: attributesDict)
+				details.imageURL = url
 			case Apple.Category.tagName:
 				let mapper = AppleCategoryMapper()
-				let category = try? mapper.mapToCategory(from: attributesDict)
+				let category = try mapper.mapToCategory(from: attributesDict)
 				addCategory(category)
 			case Apple.Explicit.tagName:
 				details.isExplicit = text.lowercased() == "true"
@@ -39,7 +38,7 @@ final class ChannelApplePodcastHandler: TagHandler {
 			case Apple.ApplePodcastsVerify.tagName:
 				details.applePodcastVerify = text
 			default:
-				nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}
 	}
 	

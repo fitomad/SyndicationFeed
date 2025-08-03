@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol TagHandler {
+protocol TagHandler: AnyObject {
 	var nextHandler: (any TagHandler)? { get set }
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String])
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Soundbite {
+public struct Soundbite: Sendable {
 	public let startTime: Double
 	public let duration: Double
 	public let title: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Funding {
+public struct Funding: Sendable {
 	public let message: String
 	public let link: URL
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Channel {
-	public struct Locked {
+	public struct Locked: Sendable {
 		public let value: String
 		public let owner: String?
 		

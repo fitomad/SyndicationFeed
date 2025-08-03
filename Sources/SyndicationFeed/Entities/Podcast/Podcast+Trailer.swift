@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Trailer {
+public struct Trailer: Sendable {
 	var title: String
 	var publishedAt: Date
 	var link: URL

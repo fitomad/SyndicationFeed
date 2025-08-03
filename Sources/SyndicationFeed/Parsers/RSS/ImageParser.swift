@@ -21,13 +21,25 @@ final class ImageParser: NSObject {
 	
 	weak var delegate: ImageParserDelegate?
 	
-	private func buildImage() throws(ImageParser.Failure) {
+	private let rootXMLDelegate: XMLParserDelegate
+	private weak var rootParser: XMLParser?
+	
+	init(rootXMLDelegate: XMLParserDelegate, rootParser: XMLParser) {
+		self.rootXMLDelegate = rootXMLDelegate
+		self.rootParser = rootParser
+	}
+	
+	private func buildImage() throws(SyndicationFeedError) {
 		guard let url = URL(string: urlContent) else {
-			throw ImageParser.Failure.malformedURL(field: "url", content: urlContent)
+			throw .malformedAttributeValue(urlContent,
+										   attribute: RSS.Image.AttributeKeys.url.rawValue,
+										   tag: RSS.Image.tagName)
 		}
 		
 		guard let link = URL(string: linkContent) else {
-			throw ImageParser.Failure.malformedURL(field: "url", content: urlContent)
+			throw .malformedAttributeValue(linkContent,
+										   attribute: RSS.Image.AttributeKeys.link.rawValue,
+										   tag: RSS.Image.tagName)
 		}
 		
 		image = RSSImage(title: imageTitle,
@@ -39,6 +51,12 @@ final class ImageParser: NSObject {
 		if let size {
 			image?.size = size
 		}
+	}
+}
+
+extension ImageParser: Restorable {
+	func restoreParserDelegate() {
+		rootParser?.delegate = rootXMLDelegate
 	}
 }
 
@@ -63,10 +81,13 @@ extension ImageParser: XMLParserDelegate {
 					if let image {
 						delegate?.imageParser(self, didFinishParse: image)
 					} else {
-						delegate?.imageParser(self, didFailWithError: .invalidImage)
+						delegate?.imageParser(self, didFailWithError: .malformedContent)
 					}
+					
+					restoreParserDelegate()
 				} catch {
 					delegate?.imageParser(self, didFailWithError: error)
+					restoreParserDelegate()
 				}
 			default:
 				break;
@@ -77,39 +98,16 @@ extension ImageParser: XMLParserDelegate {
 		currentCharacters.append(string)
 		
 		switch actualElement {
-			case Tags.url:
+			case RSS.Image.AttributeKeys.url.rawValue:
 				urlContent.append(string)
-			case Tags.title:
+			case RSS.Image.AttributeKeys.title.rawValue:
 				imageTitle.append(string)
-			case Tags.link:
+			case RSS.Image.AttributeKeys.link.rawValue:
 				linkContent.append(string)
-			case Tags.description:
+			case RSS.Image.AttributeKeys.description.rawValue:
 				imageDescription.append(string)
 			default:
 				break
 		}
-	}
-	
-	func parser(_ parser: XMLParser, parseErrorOccurred parseError: any Error) {
-		print("🚨 \(parseError)")
-	}
-}
-
-extension ImageParser {
-	enum Tags {
-		static let image = "image"
-		static let url = "url"
-		static let title = "title"
-		static let link = "link"
-		static let description = "description"
-		static let width = "width"
-		static let height = "height"
-	}
-}
-
-extension ImageParser {
-	enum Failure: Error {
-		case malformedURL(field: String, content: String)
-		case invalidImage
 	}
 }

@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct Podroll {
-	public struct RemoteItem {
+public struct Podroll: Sendable {
+	public struct RemoteItem: Sendable {
 		public let feedGUID: UUID
 		public internal(set) var feedURL: URL?
 		public internal(set) var itemGUID: String?

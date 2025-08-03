@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Person {
+public struct Person: Sendable {
 	public var role = "host"
 	public var group = "cast"
 	public var avatarURL: URL?

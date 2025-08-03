@@ -19,7 +19,8 @@ struct ApplePodcastTests {
 		}
 		
 		let parser = SyndicationFeedParser(data: feedData)
-		let channel = try await parser.parse()
+		let result = try await parser.parse()
+		let channel = result.channel
 		
 		#expect(channel.iTunes != nil)
 		

@@ -10,22 +10,26 @@ import Foundation
 typealias ItemHanler = TagHandler & ItemTagHandler
 
 final class ItemParser: NSObject {
-	var episode = Item()
-	var itemAlternateEnclosures = [AlternateEnclosure]()
-	var itemValues = [PodcastValue]()
+	private var parseFailures = [SyndicationFeedError]()
 	
-	var handlers: [any ItemHanler]
+	private var episode = Item()
+	private var itemAlternateEnclosures = [AlternateEnclosure]()
+	private var itemValues = [PodcastValue]()
+	
+	private var handlers: [any ItemHanler]
 	
 	weak var delegate: ItemParserDelegate?
 	
-	private var rootXMLParser: XMLParser?
-	private var nestedXMLParserDelegate: XMLParserDelegate?
+	private var rootXMLDelegate: XMLParserDelegate?
+	private var rootParser: XMLParser?
+	private var nestedXMLDelegate: (any XMLParserDelegate)?
 	
 	private var currentCharacters = ""
 	private var currentAttributes = [String : String]()
 	
-	init(rootXMLParser parser: XMLParser) {
-		rootXMLParser = parser
+	init(rootXMLDelegate: XMLParserDelegate, rootParser: XMLParser?) {
+		self.rootXMLDelegate = rootXMLDelegate
+		self.rootParser = rootParser
 		
 		handlers = [
 			ItemRSSHandler(),
@@ -38,6 +42,10 @@ final class ItemParser: NSObject {
 		createChain()
 	}
 	
+	deinit {
+		nestedXMLDelegate = nil
+	}
+	
 	private func createChain() {
 		for index in 0 ..< (handlers.count - 1) {
 			handlers[index].nextHandler = handlers[index + 1]
@@ -47,8 +55,7 @@ final class ItemParser: NSObject {
 
 extension ItemParser: Restorable {
 	func restoreParserDelegate() {
-		self.rootXMLParser?.delegate = self
-		nestedXMLParserDelegate = nil
+		rootParser?.delegate = rootXMLDelegate
 	}
 }
 
@@ -58,19 +65,21 @@ extension ItemParser: XMLParserDelegate {
 		currentAttributes = attributeDict
 		
 		if elementName == Podcasting.AlternateEnclosure.tagName {
-			let alternateEnclosureParser = AlternateEnclosureParser(attributtes: attributeDict)
+			let alternateEnclosureParser = AlternateEnclosureParser(rootXMLDelegate: self, rootParser: rootParser)
 			alternateEnclosureParser.delegate = self
+			alternateEnclosureParser.didStartParseElement(withAttributes: attributeDict)
 			
-			rootXMLParser?.delegate = alternateEnclosureParser
-			nestedXMLParserDelegate = alternateEnclosureParser
+			nestedXMLDelegate = alternateEnclosureParser
+			rootParser?.delegate = alternateEnclosureParser
 		}
 		
 		if elementName == Podcasting.Value.tagName {
-			let valueParser = ValueParser(attributes: attributeDict)
+			let valueParser = ValueParser(rootXMLDelegate: self, rootParser: rootParser)
 			valueParser.delegate = self
+			valueParser.didStartParseElement(withAttributes: attributeDict)
 			
-			rootXMLParser?.delegate = valueParser
-			nestedXMLParserDelegate = valueParser
+			nestedXMLDelegate = valueParser
+			rootParser?.delegate = valueParser
 		}
 	}
 	
@@ -80,9 +89,16 @@ extension ItemParser: XMLParserDelegate {
 			episode.podcasting?.alternateEnclosures = itemAlternateEnclosures.isEmpty ? nil : itemAlternateEnclosures
 			episode.podcasting?.values = itemValues.isEmpty ? nil : itemValues
 			
-			delegate?.parser(self, didFinishParse: episode)
+			handlers.removeAll()
+			
+			delegate?.parser(self, didFinishParse: episode, withErrors: parseFailures)
+			restoreParserDelegate()
 		} else {
-			handlers.first?.processTag(elementName, text: currentCharacters, withAttributes: currentAttributes)
+			do {
+				try handlers.first?.processTag(elementName, text: currentCharacters, withAttributes: currentAttributes)
+			} catch {
+				parseFailures.append(error)
+			}
 		}
 	}
 	
@@ -94,21 +110,19 @@ extension ItemParser: XMLParserDelegate {
 extension ItemParser: AlternateEnclosureParserDelegate {
 	func parser(_ parser: AlternateEnclosureParser, didFinishParse alternateEnclosure: AlternateEnclosure) {
 		itemAlternateEnclosures.append(alternateEnclosure)
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: AlternateEnclosureParser, didFailWithError error: SyndicationFeedError) {
-		restoreParserDelegate()
+		
 	}
 }
 
 extension ItemParser: ValueParserDelegate {
 	func parser(_ parser: ValueParser, didFinishParse value: PodcastValue) {
 		itemValues.append(value)
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: ValueParser, didFailWithError error: SyndicationFeedError) {
-		restoreParserDelegate()
+
 	}
 }

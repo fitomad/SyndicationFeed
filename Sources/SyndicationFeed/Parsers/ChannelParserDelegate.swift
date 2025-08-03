@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ChannelParserDelegate: AnyObject {
-	func channelParser(_: ChannelParser, didFinishParse channel: Channel)
+	func channelParser(_: ChannelParser, didFinishParse channel: Channel, withParsingErrorsFound errors: [SyndicationFeedError])
 }

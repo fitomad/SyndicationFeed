@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct ImageSet {
-	public struct Image {
+public struct ImageSet: Sendable {
+	public struct Image: Sendable {
 		public let url: URL
 		public let with: Int
 	}

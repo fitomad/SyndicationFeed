@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct PodcastImage {
-	public struct Size {
+public struct PodcastImage: Sendable {
+	public struct Size: Sendable {
 		public internal(set) var width: Int
 		public internal(set) var height: Int
 	}
 	
-	public enum Purpose {
+	public enum Purpose: Sendable {
 		case artwork
 		case social
 		case canvas

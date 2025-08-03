@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Chapters {
+public struct Chapters: Sendable {
 	public let url: URL
 	public let mimeType: String
 }

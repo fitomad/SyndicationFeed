@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Season {
+public struct Season: Sendable {
 	public let number: Int
 	public let name: String?
 }

@@ -8,6 +8,45 @@
 import Foundation
 
 enum RSS {
+	static var channelTags: [String] {
+		[
+			RSS.Image.tagName,
+			RSS.Item.tagName,
+			RSS.Title.tagName,
+			RSS.Description.tagName,
+			RSS.Link.tagName,
+			RSS.Language.tagName,
+			RSS.Copyright.tagName,
+			RSS.ManagingEditor.tagName,
+			RSS.WebMaster.tagName,
+			RSS.PubDate.tagName,
+			RSS.LastBuildDate.tagName,
+			RSS.Category.tagName,
+			RSS.Generator.tagName,
+			RSS.Docs.tagName,
+			RSS.Cloud.tagName,
+			RSS.TTL.tagName,
+			RSS.Rating.tagName,
+			RSS.SkipHours.Hour.tagName,
+			RSS.SkipDays.Day.tagName
+		]
+	}
+	
+	static var itemTags: [String] {
+		[
+			RSS.Title.tagName,
+			RSS.Description.tagName,
+			RSS.Link.tagName,
+			RSS.Author.tagName,
+			RSS.Category.tagName,
+			RSS.Comments.tagName,
+			RSS.Enclosure.tagName,
+			RSS.GUID.tagName,
+			RSS.PubDate.tagName,
+			RSS.Source.tagName
+		]
+	}
+	
 	enum Channel: FeedTag {
 		static let tagName = "channel"
 	}

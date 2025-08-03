@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AlternateEnclosure {
+public struct AlternateEnclosure: Sendable {
 	public internal(set) var type: String
 	public internal(set) var length: Int?
 	public internal(set) var bitrate: Double?
@@ -22,12 +22,12 @@ public struct AlternateEnclosure {
 }
 
 extension AlternateEnclosure {
-	public struct Source {
+	public struct Source: Sendable {
 		public let url: URL
 		public let contentType: String?
 	}
 	
-	public struct Integrity {
+	public struct Integrity: Sendable {
 		public let type: String
 		public let value: String
 	}

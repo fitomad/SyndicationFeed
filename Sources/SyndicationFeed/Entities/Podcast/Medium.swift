@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Medium: String {
+public enum Medium: String, Sendable {
 	case podcast
 	case podcastList = "podcastL"
 	case music

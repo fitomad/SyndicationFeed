@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct SkipDays {
-	public enum Day: String {
+public struct SkipDays: Sendable {
+	public enum Day: String, Sendable {
 		case monday = "Monday"
 		case tuesday = "Tuesday"
 		case wednesday = "Wednesday"

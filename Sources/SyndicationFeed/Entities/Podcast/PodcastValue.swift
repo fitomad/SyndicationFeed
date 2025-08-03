@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct PodcastValue {
-	public struct Recipient {
+public struct PodcastValue: Sendable {
+	public struct Recipient: Sendable {
 		public let type: String
 		public let address: String
 		public let splitValue: Int

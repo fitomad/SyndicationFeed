@@ -3,14 +3,15 @@ import Testing
 
 @Suite("Podcast XML feed parser tests")
 struct SyndicationFeedTests {
-	@Test("", .tags(.feedParser), arguments: [ FeedTestFile.podcastIndex ])
+	@Test("All tests", .tags(.feedParser), arguments: [ FeedTestFile.podcastIndex ])
 	func parseAllMockFeeds(feedContent: String) async throws {
 		guard let feedData = feedContent.data(using: .utf8) else {
 			throw FeedTestFile.Failure.malformedContent
 		}
 		
 		let parser = SyndicationFeedParser(data: feedData)
-		let channel = try await parser.parse()
+		let result = try await parser.parse()
+		let channel = result.channel
 		
 		#expect(channel.title.isEmpty == false)
 	}
@@ -22,7 +23,8 @@ struct SyndicationFeedTests {
 		}
 		
 		let parser = SyndicationFeedParser(data: feedData)
-		let channel = try await parser.parse()
+		let result = try await parser.parse()
+		let channel = result.channel
 		
 		#expect(channel.title == "Podcasting 2.0 Namespace Example")
 	}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ChannelType: String {
+public enum ChannelType: String, Sendable {
 	case episodic
 	case serial
 }

@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct Location {
-	public enum Relative: String {
+public struct Location: Sendable {
+	public enum Relative: String, Sendable {
 		case subject
 		case creator
 	}
 	
-	public struct Coordinates: Equatable {
+	public struct Coordinates: Equatable, Sendable {
 		public var latitude: Double
 		public var longitude: Double
 	}

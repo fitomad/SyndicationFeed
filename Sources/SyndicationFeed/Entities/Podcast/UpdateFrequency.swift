@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct UpdateFrequency {
-	public enum Frequence: String {
+public struct UpdateFrequency: Sendable {
+	public enum Frequence: String, Sendable {
 		case secondly = "SECONDLY"
 		case minutely = "MINUTELY"
 		case hourly = "HOURLY"
@@ -18,7 +18,7 @@ public struct UpdateFrequency {
 		case yearly = "YEARLY"
 	}
 	
-	public enum Weekday: String {
+	public enum Weekday: String, Sendable {
 		case sunday = "SU"
 		case monday = "MO"
 		case tuesday = "TU"
@@ -28,7 +28,7 @@ public struct UpdateFrequency {
 		case saturday = "SA"
 	}
 	
-	public enum Month: Int {
+	public enum Month: Int, Sendable {
 		case january = 1
 		case february = 2
 		case march = 3

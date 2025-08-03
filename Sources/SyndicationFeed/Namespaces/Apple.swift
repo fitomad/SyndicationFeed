@@ -8,6 +8,34 @@
 import Foundation
 
 enum Apple {
+	static var channelTags: [String] {
+		[
+			Apple.Image.tagName,
+			Apple.Category.tagName,
+			Apple.Explicit.tagName,
+			Apple.Author.tagName,
+			Apple.Title.tagName,
+			Apple.PodcastType.tagName,
+			Apple.NewFeedURL.tagName,
+			Apple.Block.tagName,
+			Apple.Complete.tagName,
+			Apple.ApplePodcastsVerify.tagName
+		]
+	}
+	
+	static var itemTags: [String] {
+		[
+			Apple.Duration.tagName,
+			Apple.Image.tagName,
+			Apple.Explicit.tagName,
+			Apple.Title.tagName,
+			Apple.EpisodeNumber.tagName,
+			Apple.SeasonNumber.tagName,
+			Apple.EpisodeType.tagName,
+			Apple.Block.tagName
+		]
+	}
+	
 	enum Author: FeedTag {
 		static let tagName = "itunes:author"
 	}

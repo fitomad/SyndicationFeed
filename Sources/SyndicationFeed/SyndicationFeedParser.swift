@@ -3,11 +3,12 @@
 
 import Foundation
 
-public final class SyndicationFeedParser {
+final class SyndicationFeedParser {
 	private var parser: ChannelParser?
 	private var channel: Channel?
+	private var parsingErrors: [SyndicationFeedError]?
 	
-	public convenience init(url: URL) throws(SyndicationFeedError) {
+	convenience init(url: URL) throws(SyndicationFeedError) {
 		guard let data = try? Data(contentsOf: url) else {
 			throw .contentNotFound
 		}
@@ -15,7 +16,7 @@ public final class SyndicationFeedParser {
 		self.init(data: data)
 	}
 	
-	public convenience init(content: String) throws(SyndicationFeedError) {
+	convenience init(content: String) throws(SyndicationFeedError) {
 		guard let data = content.data(using: .utf8) else {
 			throw .malformedContent
 		}
@@ -23,12 +24,12 @@ public final class SyndicationFeedParser {
 		self.init(data: data)
 	}
 	
-	public init(data: Data) {
+	init(data: Data) {
 		parser = ChannelParser(data: data)
 		parser?.delegate = self
 	}
 	
-	public func parse() async throws(SyndicationFeedError) -> Channel {
+	func parse() async throws(SyndicationFeedError) -> FeedResult {
 		guard let parser else {
 			throw .contentNotFound
 		}
@@ -39,12 +40,12 @@ public final class SyndicationFeedParser {
 			throw .malformedContent
 		}
 		
-		return channel
+		return FeedResult(channel: channel, parsingErrors: parsingErrors)
 	}
 }
 
 extension SyndicationFeedParser: ChannelParserDelegate {
-	func channelParser(_ parser: ChannelParser, didFinishParse podcast: Channel) {
+	func channelParser(_ parser: ChannelParser, didFinishParse podcast: Channel, withParsingErrorsFound error: [SyndicationFeedError]) {
 		self.channel = podcast
 	}
 }

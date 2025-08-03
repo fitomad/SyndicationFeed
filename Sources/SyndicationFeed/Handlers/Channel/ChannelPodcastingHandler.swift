@@ -9,9 +9,14 @@ import Foundation
 
 final class ChannelPodcastingHandler: TagHandler {
 	var podcasting = Channel.Podcasting()
-	var nextHandler: (any TagHandler)?
+	weak var nextHandler: (any TagHandler)?
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) {
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError) {
+		guard Podcasting.channelTags.contains(tagName) else {
+			try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+			return
+		}
+		
 		switch tagName {
 			case Podcasting.Block.tagName:
 				let mapper = BlockMapper()
@@ -26,11 +31,11 @@ final class ChannelPodcastingHandler: TagHandler {
 				podcasting.guid = UUID(uuidString: text)
 			case Podcasting.Image.tagName:
 				let mapper = PodcastImageMapper()
-				let image = try? mapper.mapToPodcastImage(from: attributesDict)
+				let image = try mapper.mapToPodcastImage(from: attributesDict)
 				addImage(image)
 			case Podcasting.Images.tagName:
 				let mapper = ImageSetMapper()
-				podcasting.imageSet = try? mapper.mapToImages(from: attributesDict)
+				podcasting.imageSet = try mapper.mapToImages(from: attributesDict)
 			case Podcasting.License.tagName:
 				let mapper = LicenseMapper()
 				podcasting.license = mapper.mapToLicense(using: attributesDict, titled: text)
@@ -52,11 +57,11 @@ final class ChannelPodcastingHandler: TagHandler {
 				podcasting.usesPodping = mapper.mapToBool(using: attributesDict)
 			case Podcasting.SocialInteract.tagName:
 				let mapper = SocialInteractMapper()
-				let profile = try? mapper.mapToSocialInteract(from: attributesDict)
+				let profile = try mapper.mapToSocialInteract(from: attributesDict)
 				addSocialProfile(profile)
 			case Podcasting.Trailer.tagName:
 				let mapper = TrailerMapper()
-				let trailer = try? mapper.mapToTrailer(from: attributesDict, title: text)
+				let trailer = try mapper.mapToTrailer(from: attributesDict, title: text)
 				addTrailer(trailer)
 			case Podcasting.TXT.tagName:
 				let mapper = TXTMapper()
@@ -66,7 +71,7 @@ final class ChannelPodcastingHandler: TagHandler {
 				let mapper = UpdateFrequencyMapper()
 				podcasting.updateFrequency = mapper.mapToUpdateFrequency(using: attributesDict, text: text)
 			default:
-				nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}
 	}
 	

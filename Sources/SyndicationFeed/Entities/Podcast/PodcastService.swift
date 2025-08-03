@@ -5,7 +5,7 @@
 //  Created by Adolfo Vera Blasco on 15/7/25.
 //
 
-public enum PodcastService: String {
+public enum PodcastService: String, Sendable {
 	case acast
 	case amazon
 	case anchor

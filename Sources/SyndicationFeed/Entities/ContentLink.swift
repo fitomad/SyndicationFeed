@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ContentLink {
+public struct ContentLink: Sendable {
 	let link: URL
 	let media: String?
 	

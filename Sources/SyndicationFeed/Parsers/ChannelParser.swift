@@ -13,13 +13,15 @@ final class ChannelParser: NSObject {
 	private let parser: XMLParser
 	weak var delegate: (any ChannelParserDelegate)?
 	
+	private var nestedXMLDelegate: (any XMLParserDelegate)?
+	
 	private var currentTag = ""
 	private var currentAttributes = [String : String]()
 	private var currentCharacters = ""
 	
-	private var nestedXmlDelegate: XMLParserDelegate?
+	private var handlers: [any ChannelHanler]
 	
-	var handlers: [any ChannelHanler]
+	private var parseFailures = [SyndicationFeedError]()
 	
 	private var channel = Channel()
 	private var liveItems = [Channel.LiveItem]()
@@ -42,6 +44,10 @@ final class ChannelParser: NSObject {
 		self.parser.delegate = self
 	}
 	
+	deinit {
+		nestedXMLDelegate = nil
+	}
+	
 	func start() {
 		self.parser.parse()
 	}
@@ -53,13 +59,6 @@ final class ChannelParser: NSObject {
 	}
 }
 
-extension ChannelParser: Restorable {
-	func restoreParserDelegate() {
-		self.parser.delegate = self
-		nestedXmlDelegate = nil
-	}
-}
-
 extension ChannelParser: XMLParserDelegate {
 	public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 		currentAttributes = attributeDict
@@ -67,45 +66,45 @@ extension ChannelParser: XMLParserDelegate {
 		currentTag = elementName
 		
 		if elementName == Podcasting.LiveItem.tagName {
-			let liveItemParser = LiveItemParser(attributes: attributeDict, usingRootParser: self.parser)
+			let liveItemParser = LiveItemParser(rootXMLDelegate: self, rootParser: parser)
 			liveItemParser.delegate = self
+			liveItemParser.didStartParseElement(withAttributes: attributeDict)
 			
 			parser.delegate = liveItemParser
-			nestedXmlDelegate = liveItemParser
+			nestedXMLDelegate = liveItemParser
 		}
 		
 		if elementName == Podcasting.Podroll.tagName {
-			let podrollParser = PodrollParser()
+			let podrollParser = PodrollParser(rootXMLDelegate: self, rootParser: parser)
 			podrollParser.delegate = self
 			
 			parser.delegate = podrollParser
-			nestedXmlDelegate = podrollParser
+			nestedXMLDelegate = podrollParser
 		}
 		
 		if elementName == Podcasting.Value.tagName {
-			let valueParser = ValueParser(attributes: attributeDict)
+			let valueParser = ValueParser(rootXMLDelegate: self, rootParser: parser)
 			valueParser.delegate = self
+			valueParser.didStartParseElement(withAttributes: attributeDict)
 			
 			parser.delegate = valueParser
-			nestedXmlDelegate = valueParser
+			nestedXMLDelegate = valueParser
 		}
 		
 		if elementName == RSS.Image.tagName {
-			let imageParser = ImageParser()
+			let imageParser = ImageParser(rootXMLDelegate: self, rootParser: parser)
 			imageParser.delegate = self
 			
 			parser.delegate = imageParser
-			nestedXmlDelegate = imageParser
+			nestedXMLDelegate = imageParser
 		}
 		
-		
-		
 		if elementName == RSS.Item.tagName {
-			let itemParser = ItemParser(rootXMLParser: self.parser)
+			let itemParser = ItemParser(rootXMLDelegate: self, rootParser: parser)
 			itemParser.delegate = self
 			
 			parser.delegate = itemParser
-			nestedXmlDelegate = itemParser
+			nestedXMLDelegate = itemParser
 		}
 	}
 	
@@ -118,9 +117,15 @@ extension ChannelParser: XMLParserDelegate {
 			channel.podcasting?.podroll = podroll
 			channel.podcasting?.values = values
 			
-			delegate?.channelParser(self, didFinishParse: channel)
+			handlers.removeAll()
+			
+			delegate?.channelParser(self, didFinishParse: channel, withParsingErrorsFound: parseFailures)
 		} else {
-			handlers.first?.processTag(elementName, text: currentCharacters, withAttributes: currentAttributes)
+			do {
+				try handlers.first?.processTag(elementName, text: currentCharacters, withAttributes: currentAttributes)
+			} catch {
+				parseFailures.append(error)
+			}
 		}
 	}
 	
@@ -129,57 +134,56 @@ extension ChannelParser: XMLParserDelegate {
 	}
 	
 	public func parser(_ parser: XMLParser, parseErrorOccurred parseError: any Error) {
-		print("🚨 \(parseError)")
+		
 	}
 }
 
 extension ChannelParser: ImageParserDelegate {
 	func imageParser(_ parser: ImageParser, didFinishParse image: RSSImage) {
 		channel.image = image
-		restoreParserDelegate()
 	}
 	
-	func imageParser(_ parser: ImageParser, didFailWithError error: ImageParser.Failure) {
-		restoreParserDelegate()
+	func imageParser(_ parser: ImageParser, didFailWithError error: SyndicationFeedError) {
+		parseFailures.append(error)
 	}
 }
 
 extension ChannelParser: LiveItemParserDelegate {
 	func parser(_ parser: LiveItemParser, didFinishParse liveItem: Channel.LiveItem) {
 		liveItems.append(liveItem)
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: LiveItemParser, didFailWithError error: SyndicationFeedError) {
-		restoreParserDelegate()
+		parseFailures.append(error)
 	}
 }
 
 extension ChannelParser: PodrollParserDelegate {
 	func parser(_ parser: PodrollParser, didFinishParse podroll: Podroll) {
 		self.podroll = podroll
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: PodrollParser, didFinishWithError error: SyndicationFeedError) {
-		restoreParserDelegate()
+		parseFailures.append(error)
 	}
 }
 
 extension ChannelParser: ValueParserDelegate {
 	func parser(_ parser: ValueParser, didFinishParse value: PodcastValue) {
 		values.append(value)
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: ValueParser, didFailWithError error: SyndicationFeedError) {
-		restoreParserDelegate()
+		parseFailures.append(error)
 	}
 }
 
 extension ChannelParser: ItemParserDelegate {
-	func parser(_ parser: ItemParser, didFinishParse item: Item) {
+	func parser(_ parser: ItemParser, didFinishParse item: Item, withErrors errors: [SyndicationFeedError]) {
+		if !errors.isEmpty {
+			parseFailures.append(contentsOf: errors)
+		}
+		
 		channel.items.append(item)
-		restoreParserDelegate()
 	}
 }

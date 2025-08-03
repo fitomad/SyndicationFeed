@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum EpisodeType: String {
+public enum EpisodeType: String, Sendable {
 	case full
 	case trailer
 	case bonus

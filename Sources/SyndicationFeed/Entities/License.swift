@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct License {
+public struct License: Sendable {
 	public let title: String
 	public let link: URL?
 	

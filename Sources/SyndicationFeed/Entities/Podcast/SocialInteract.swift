@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct SocialInteract {
-	public enum NetworkProtocol: String {
+public struct SocialInteract: Sendable {
+	public enum NetworkProtocol: String, Sendable {
 		case disabled
 		case activitypub
 		case twitter

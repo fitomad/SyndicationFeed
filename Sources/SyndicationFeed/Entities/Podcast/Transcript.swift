@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Transcript {
+public struct Transcript: Sendable {
 	public let link: URL
 	public let mimeType: String
 	public let language: String?

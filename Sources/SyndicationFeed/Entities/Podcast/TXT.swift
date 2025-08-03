@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TXT {
+public struct TXT: Sendable {
 	public let value: String
 	public let purpose: String?
 }

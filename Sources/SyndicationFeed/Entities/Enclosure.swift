@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Enclosure {
+public struct Enclosure: Sendable {
 	var url: URL
 	var length: Int
 	var type: String

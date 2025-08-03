@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Channel {
+public struct Channel: Sendable {
 	public internal(set) var title = ""
 	public internal(set) var description: String?
 	public internal(set) var link: URL?
@@ -34,7 +34,7 @@ public struct Channel {
 }
 
 extension Channel {
-	public struct Podcasting {
+	public struct Podcasting: Sendable {
 		public internal(set) var block: Block?
 		public internal(set) var chat: Chat?
 		public internal(set) var funding: Funding?
@@ -58,7 +58,7 @@ extension Channel {
 }
 
 extension Channel {
-	public struct Apple {
+	public struct Apple: Sendable {
 		public internal(set) var imageURL: URL?
 		public internal(set) var categories: [String]?
 		public internal(set) var isExplicit: Bool?

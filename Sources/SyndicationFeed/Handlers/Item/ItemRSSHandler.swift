@@ -9,9 +9,14 @@ import Foundation
 
 final class ItemRSSHandler: TagHandler {
 	private var details = ItemRSSHandler.Details()
-	var nextHandler: (any TagHandler)?
+	weak var nextHandler: (any TagHandler)?
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) {
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError) {
+		guard RSS.itemTags.contains(tagName) else {
+			try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+			return
+		}
+		
 		switch tagName {
 			case RSS.Title.tagName:
 				details.title = text
@@ -27,20 +32,20 @@ final class ItemRSSHandler: TagHandler {
 				details.commentsURL = URL(string: text)
 			case RSS.Enclosure.tagName:
 				let mapper = EnclosureMapper()
-				let enclosure = try? mapper.mapToEnclosure(from: attributesDict)
+				let enclosure = try mapper.mapToEnclosure(from: attributesDict)
 				details.enclosure = enclosure
 			case RSS.GUID.tagName:
 				let mapper = GUIDMapper()
-				let guid = try? mapper.mapToGUID(from: attributesDict, urlContent: text)
+				let guid = try mapper.mapToGUID(from: attributesDict, urlContent: text)
 				details.guid = guid
 			case RSS.PubDate.tagName:
 				details.publicationDate = DateFormatter.publicationDateFormatter.date(from: text)
 			case RSS.Source.tagName:
 				let mapper = SourceMapper()
-				let source = try? mapper.mapToSource(from: attributesDict, text: text)
+				let source = try mapper.mapToSource(from: attributesDict, text: text)
 				details.source = source
 			default:
-				nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}
 	}
 }

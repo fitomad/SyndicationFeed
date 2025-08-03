@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct RSSImage {
-	public struct Size {
+public struct RSSImage: Sendable {
+	public struct Size: Sendable {
 		public internal(set) var width = 88
 		public internal(set) var height = 31
 	}

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ItemParserDelegate: AnyObject {
-	func parser(_ parser: ItemParser, didFinishParse item: Item)
+	func parser(_ parser: ItemParser, didFinishParse item: Item, withErrors parsingErrors: [SyndicationFeedError])
 }

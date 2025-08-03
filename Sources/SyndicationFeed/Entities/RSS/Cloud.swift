@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Cloud {
+public struct Cloud: Sendable {
 	public let domain: String
 	public let port: Int
 	public let path: String

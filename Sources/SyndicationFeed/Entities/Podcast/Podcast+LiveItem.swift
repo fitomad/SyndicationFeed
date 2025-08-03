@@ -8,7 +8,7 @@
 import Foundation
 
 extension Channel {
-	public struct LiveItem {
+	public struct LiveItem: Sendable {
 		public let status: String
 		public let startAt: Date
 		public var endAt: Date?

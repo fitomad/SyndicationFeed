@@ -13,9 +13,14 @@ final class ChannelRSSHandler: TagHandler {
 	private var hours = [Int]()
 	private var days = [SkipDays.Day]()
 	
-	var nextHandler: (any TagHandler)?
+	weak var nextHandler: (any TagHandler)?
 	
-	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) {
+	func processTag(_ tagName: String, text: String, withAttributes attributesDict: [String : String]) throws(SyndicationFeedError) {
+		guard RSS.channelTags.contains(tagName) else {
+			try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+			return
+		}
+		
 		switch tagName {
 			case RSS.Title.tagName:
 				details.title = text
@@ -43,9 +48,8 @@ final class ChannelRSSHandler: TagHandler {
 				details.document = URL(string: text)
 			case RSS.Cloud.tagName:
 				let mapper = CloudMapper()
-				if let cloud = try? mapper.mapToCloud(from: attributesDict) {
-					details.cloud = cloud
-				}
+				let cloud = try mapper.mapToCloud(from: attributesDict)
+				details.cloud = cloud
 			case RSS.TTL.tagName:
 				details.ttl = Int(text)
 			case RSS.Rating.tagName:
@@ -59,7 +63,7 @@ final class ChannelRSSHandler: TagHandler {
 					days.append(day)
 				}
 			default:
-				nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
+				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}
 	}
 }

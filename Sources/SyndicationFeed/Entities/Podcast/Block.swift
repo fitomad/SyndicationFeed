@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Block {
+public struct Block: Sendable {
 	public let value: String
 	public let service: PodcastService?
 	

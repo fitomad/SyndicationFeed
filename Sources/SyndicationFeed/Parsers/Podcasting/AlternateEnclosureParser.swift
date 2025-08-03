@@ -14,10 +14,24 @@ final class AlternateEnclosureParser: NSObject {
 	private var mapper = AlternateEnclosureMapper()
 	private var alternateEnclosure: AlternateEnclosure?
 	
+	private let rootXMLDelegate: XMLParserDelegate
+	private weak var rootParser: XMLParser?
+	
 	weak var delegate: AlternateEnclosureParserDelegate?
 	
-	init(attributtes: [String : String]) {
-		alternateEnclosure = try? mapper.mapToAlternateEnclosure(from: attributtes)
+	init(rootXMLDelegate: XMLParserDelegate, rootParser: XMLParser?) {
+		self.rootXMLDelegate = rootXMLDelegate
+		self.rootParser = rootParser
+	}
+	
+	func didStartParseElement(withAttributes attributes: [String : String]) {
+		alternateEnclosure = try? mapper.mapToAlternateEnclosure(from: attributes)
+	}
+}
+
+extension AlternateEnclosureParser: Restorable {
+	func restoreParserDelegate() {
+		rootParser?.delegate = rootXMLDelegate
 	}
 }
 
@@ -46,6 +60,8 @@ extension AlternateEnclosureParser: XMLParserDelegate {
 			} else {
 				delegate?.parser(self, didFailWithError: .malformedContent)
 			}
+			
+			restoreParserDelegate()
 		}
 	}
 }

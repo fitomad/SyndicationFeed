@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Item {
+public struct Item: Sendable {
 	public var title: String?
 	public var description: String?
 	public var link: URL?
@@ -24,7 +24,7 @@ public struct Item {
 }
 
 extension Item {
-	public struct Podcasting {
+	public struct Podcasting: Sendable {
 		public var alternateEnclosures: [AlternateEnclosure]?
 		public var transcripts: [Transcript]?
 		public var season: Season?
@@ -46,7 +46,7 @@ extension Item {
 }
 
 extension Item {
-	public struct Apple {
+	public struct Apple: Sendable {
 		public var title: String?
 		public var duration: Int?
 		public var episodeType: EpisodeType?

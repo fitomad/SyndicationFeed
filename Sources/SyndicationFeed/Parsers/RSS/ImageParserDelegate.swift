@@ -9,5 +9,5 @@ import Foundation
 
 protocol ImageParserDelegate: AnyObject {
 	func imageParser(_ parser: ImageParser, didFinishParse image: RSSImage)
-	func imageParser(_ parser: ImageParser, didFailWithError error: ImageParser.Failure)
+	func imageParser(_ parser: ImageParser, didFailWithError error: SyndicationFeedError)
 }

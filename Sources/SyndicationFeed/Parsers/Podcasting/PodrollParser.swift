@@ -7,14 +7,23 @@
 
 import Foundation
 
-protocol PodrollParserDelegate: AnyObject {
-	func parser(_ parser: PodrollParser, didFinishParse podroll: Podroll)
-	func parser(_ parser: PodrollParser, didFinishWithError error: SyndicationFeedError)
-}
-
 final class PodrollParser: NSObject {
 	var remoteItems = [Podroll.RemoteItem]()
 	weak var delegate: PodrollParserDelegate?
+	
+	private let rootXMLDelegate: XMLParserDelegate
+	private weak var rootParser: XMLParser?
+	
+	init(rootXMLDelegate: XMLParserDelegate, rootParser: XMLParser?) {
+		self.rootXMLDelegate = rootXMLDelegate
+		self.rootParser = rootParser
+	}
+}
+
+extension PodrollParser: Restorable {
+	func restoreParserDelegate() {
+		rootParser?.delegate = rootXMLDelegate
+	}
 }
 
 extension PodrollParser: XMLParserDelegate {
@@ -27,6 +36,7 @@ extension PodrollParser: XMLParserDelegate {
 				remoteItems.append(remoteItem)
 			} catch {
 				delegate?.parser(self, didFinishWithError: .malformedContent)
+				restoreParserDelegate()
 			}
 		}
 	}
@@ -34,7 +44,9 @@ extension PodrollParser: XMLParserDelegate {
 	func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
 		if elementName == Podcasting.Podroll.tagName {
 			let podroll = Podroll(remoteItems: remoteItems)
+			
 			delegate?.parser(self, didFinishParse: podroll)
+			restoreParserDelegate()
 		}
 	}
 }

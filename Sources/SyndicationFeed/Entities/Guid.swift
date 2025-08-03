@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Guid {
+public struct Guid: Sendable {
 	public let isPermaLink: Bool
 	public let link: URL
 	

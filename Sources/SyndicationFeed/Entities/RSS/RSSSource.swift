@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RSSSource {
+public struct RSSSource: Sendable {
 	public let title: String
 	public let link: URL
 }

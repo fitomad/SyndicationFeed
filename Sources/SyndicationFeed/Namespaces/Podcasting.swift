@@ -11,6 +11,7 @@ enum Podcasting {
 	static var channelTags: [String] {
 		[
 			Podcasting.Block.tagName,
+			Podcasting.Chat.tagName,
 			Podcasting.Funding.tagName,
 			Podcasting.GUID.tagName,
 			Podcasting.Image.tagName,
@@ -21,6 +22,8 @@ enum Podcasting {
 			Podcasting.Locked.tagName,
 			Podcasting.Medium.tagName,
 			Podcasting.Person.tagName,
+			Podcasting.Podping.tagName,
+			Podcasting.Podroll.tagName,
 			Podcasting.SocialInteract.tagName,
 			Podcasting.Trailer.tagName,
 			Podcasting.TXT.tagName,
@@ -42,6 +45,7 @@ enum Podcasting {
 			Podcasting.Location.tagName,
 			Podcasting.Person.tagName,
 			Podcasting.Season.tagName,
+			Podcasting.Episode.tagName,
 			Podcasting.SocialInteract.tagName,
 			Podcasting.Soundbite.tagName,
 			Podcasting.Transcript.tagName,

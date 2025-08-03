@@ -13,17 +13,26 @@ final class LiveItemParser: NSObject {
 	private var currentAttributes = [String : String]()
 	private var liveItemProperties = [String : String]()
 	
-	private var nestedXMLParserDelegate: XMLParserDelegate?
-	private var rootXMLParser: XMLParser?
+	private var rootXMLDelegate: XMLParserDelegate?
+	private weak var rootXMLParser: XMLParser?
+	private var nestedXMLDelegate: XMLParserDelegate?
 	
 	private var liveItem: Channel.LiveItem?
 	weak var delegate: LiveItemParserDelegate?
 	
 	let mapper = LiveItemMapper()
 	
-	init(attributes: [String : String], usingRootParser rootXMLParser: XMLParser? = nil) {
+	init(rootXMLDelegate: XMLParserDelegate, rootParser: XMLParser?) {
+		self.rootXMLDelegate = rootXMLDelegate
+		self.rootXMLParser = rootParser
+	}
+	
+	deinit {
+		nestedXMLDelegate = nil
+	}
+	
+	func didStartParseElement(withAttributes attributes: [String : String]) {
 		liveItem = try? mapper.mapToLiveItem(using: attributes)
-		self.rootXMLParser = rootXMLParser
 	}
 	
 	private func appendContentLink(_ contentLink: ContentLink?) {
@@ -41,8 +50,7 @@ final class LiveItemParser: NSObject {
 
 extension LiveItemParser: Restorable {
 	func restoreParserDelegate() {
-		self.rootXMLParser?.delegate = self
-		nestedXMLParserDelegate = nil
+		rootXMLParser?.delegate = rootXMLDelegate
 	}
 }
 
@@ -57,11 +65,12 @@ extension LiveItemParser: XMLParserDelegate {
 				let enclosureMapper = EnclosureMapper()
 				liveItem?.enclosure = try? enclosureMapper.mapToEnclosure(from: attributeDict)
 			case Podcasting.AlternateEnclosure.tagName:
-				let alternateEnclosureParser = AlternateEnclosureParser(attributtes: attributeDict)
+				let alternateEnclosureParser = AlternateEnclosureParser(rootXMLDelegate: self, rootParser: rootXMLParser)
 				alternateEnclosureParser.delegate = self
+				alternateEnclosureParser.didStartParseElement(withAttributes: currentAttributes)
 				
+				nestedXMLDelegate = alternateEnclosureParser
 				parser.delegate = alternateEnclosureParser
-				nestedXMLParserDelegate = alternateEnclosureParser
 			default:
 				break
 		}
@@ -87,6 +96,7 @@ extension LiveItemParser: XMLParserDelegate {
 			case Podcasting.LiveItem.tagName:
 				if let liveItem {
 					delegate?.parser(self, didFinishParse: liveItem)
+					restoreParserDelegate()
 				}
 			default:
 				break
@@ -105,13 +115,9 @@ extension LiveItemParser: AlternateEnclosureParserDelegate {
 		}
 		
 		liveItem?.alternateEnclosures?.append(alternateEnclosure)
-		
-		restoreParserDelegate()
 	}
 	
 	func parser(_ parser: AlternateEnclosureParser, didFailWithError error: SyndicationFeedError) {
 		print(error)
-		
-		restoreParserDelegate()
 	}
 }
