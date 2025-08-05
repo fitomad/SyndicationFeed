@@ -23,7 +23,7 @@ Add SyndicationFeed to your Swift package dependencies in `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/SyndicationFeed.git", from: "1.0.0")
+    .package(url: "https://github.com/fitomad/SyndicationFeed.git", from: "0.9.0")
 ]
 ```
 
