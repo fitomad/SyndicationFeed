@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:psc="http://podlove.org/simple-chapters" xmlns:omny="https://omny.fm/rss-extensions" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:acast="https://schema.acast.com/1.0/" xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0">
+    <channel>
+        <omny:organizationId>2446592a-b80e-4d28-a4fd-ae4c0140ac11</omny:organizationId>
+        <omny:networkId>6ba1dded-d59a-4d44-a6f7-ae66009d2480</omny:networkId>
+        <omny:programId>b6ea43af-e96c-4513-accb-b2f000b57974</omny:programId>
+        <omny:playlistId>5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4</omny:playlistId>
+        <language>es</language>
+        <atom:link rel="self" type="application/rss+xml" href="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/podcast.rss"/>
+        <atom:link rel="first" type="application/rss+xml" href="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/podcast.rss?page=1"/>
+        <atom:link rel="last" type="application/rss+xml" href="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/podcast.rss?page=1"/>
+        <title>La cumbre de los horrores</title>
+        <itunes:subtitle>"La Cumbre de los Horrores" es una serie antológica de terror en formato audio donde cada episodio te sumerge en una nueva pesadilla</itunes:subtitle>
+        <link>https://www.podiumpodcast.com/podcasts/la-cumbre-de-los-horrores-podium-os/</link>
+        <description>
+            <![CDATA[<p>La Cumbre de los Horrores es una serie antol&oacute;gica de terror en formato audio donde cada episodio te sumerge en una nueva pesadilla. No hay continuidad entre cap&iacute;tulos, pero todos comparten un mismo prop&oacute;sito: inquietarte, desestabilizarte y envolverte en atm&oacute;sferas tan perturbadoras como irresistibles. Los personajes no pueden verte, pero t&uacute; est&aacute;s all&iacute;: en la misma habitaci&oacute;n, en el mismo susurro, testigo de lo que nadie deber&iacute;a presenciar.</p>
+            <p>Una ficci&oacute;n sonora original de Podium Podcast.</p>
+            <p>Escrita por Stiff Sulivan.</p>
+            <p>Dirigida por Jes&uacute;s Blanqui&ntilde;o y con dise&ntilde;o sonoro de Ignacio Cantisano.</p>
+            <p>La producci&oacute;n de Sandra Mart&iacute;n y Luc&iacute;a Villaverde.</p>
+            <p>T&eacute;cnico de grabaci&oacute;n y montaje, Oskar Bogdanowickz.</p>
+            <p>El dise&ntilde;o gr&aacute;fico de la Agencia Player y la producci&oacute;n ejecutiva de Eugenio Vi&ntilde;as.&nbsp;</p>]]>
+        </description>
+        <itunes:type>serial</itunes:type>
+        <itunes:summary>La Cumbre de los Horrores es una serie antológica de terror en formato audio donde cada episodio te sumerge en una nueva pesadilla. No hay continuidad entre capítulos, pero todos comparten un mismo propósito: inquietarte, desestabilizarte y envolverte en atmósferas tan perturbadoras como irresistibles. Los personajes no pueden verte, pero tú estás allí: en la misma habitación, en el mismo susurro, testigo de lo que nadie debería presenciar.
+
+        Una ficción sonora original de Podium Podcast.
+
+        Escrita por Stiff Sulivan.
+
+        Dirigida por Jesús Blanquiño y con diseño sonoro de Ignacio Cantisano.
+
+        La producción de Sandra Martín y Lucía Villaverde.
+
+        Técnico de grabación y montaje, Oskar Bogdanowickz.
+
+        El diseño gráfico de la Agencia Player y la producción ejecutiva de Eugenio Viñas. </itunes:summary>
+        <itunes:owner>
+            <itunes:name>Podium Podcast</itunes:name>
+            <itunes:email>contacto@podiumpodcast.com</itunes:email>
+        </itunes:owner>
+        <itunes:author>Podium Podcast</itunes:author>
+        <copyright>2025 Podium Podcast - 2025</copyright>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:category text="Fiction"></itunes:category>
+        <itunes:image href="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/image.jpg?t=1748862164&amp;size=Large"/>
+        <image>
+            <url>https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/image.jpg?t=1748862164&amp;size=Large</url>
+            <title>La cumbre de los horrores</title>
+            <link>https://www.podiumpodcast.com/podcasts/la-cumbre-de-los-horrores-podium-os/</link>
+        </image>
+        <item>
+            <title>Episodio 4: Miseria</title>
+            <itunes:title>Episodio 4: Miseria</itunes:title>
+            <description>
+                <![CDATA[<p>Rebeca est&aacute; pasando un mal momento. Su novio&nbsp; y amigos organizan una escapada al campo para ayudarla a desconectar. Ba&ntilde;os, hogueras, historias... pero quiz&aacute; no est&eacute;n tan solos como ellos creen.</p> <p>En este episodio han particioado:<br>Nacho Hevia</p> <p>Laura Saez</p> <p>Ampar&oacute; Mar&iacute;</p> <p>Fernando Delgado Hierro</p> <p>Jes&uacute;s Ors</p> <p>Antonio Sierra</p> <p>Rafael Lucas</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>Rebeca est&aacute; pasando un mal momento. Su novio&nbsp; y amigos organizan una escapada al campo para ayudarla a desconectar. Ba&ntilde;os, hogueras, historias... pero quiz&aacute; no est&eacute;n tan solos como ellos creen.</p> <p>En este episodio han particioado:<br>Nacho Hevia</p> <p>Laura Saez</p> <p>Ampar&oacute; Mar&iacute;</p> <p>Fernando Delgado Hierro</p> <p>Jes&uacute;s Ors</p> <p>Antonio Sierra</p> <p>Rafael Lucas</p>]]>
+            </content:encoded>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:season>1</itunes:season>
+            <itunes:episode>4</itunes:episode>
+            <itunes:author>Podium Podcast</itunes:author>
+            <itunes:image href="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e1511d4f-e45a-4192-8c9b-b3090032694c/image.jpg?t=1750993679&amp;size=Large"/>
+            <media:content url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e1511d4f-e45a-4192-8c9b-b3090032694c/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" type="audio/mpeg">
+                <media:player url="https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-4-miseria/embed"/>
+            </media:content>
+            <media:content url="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e1511d4f-e45a-4192-8c9b-b3090032694c/image.jpg?t=1750993679&amp;size=Large" type="image/jpeg"/>
+            <guid isPermaLink="false">e1511d4f-e45a-4192-8c9b-b3090032694c</guid>
+            <omny:clipId>e1511d4f-e45a-4192-8c9b-b3090032694c</omny:clipId>
+            <pubDate>Fri, 27 Jun 2025 04:00:00 +0000</pubDate>
+            <itunes:duration>1074</itunes:duration>
+            <enclosure url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e1511d4f-e45a-4192-8c9b-b3090032694c/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" length="17237276" type="audio/mpeg"/>
+            <link>https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-4-miseria</link>
+        </item>
+        <item>
+            <title>Episodio 3. Autorretrato</title>
+            <itunes:title>Episodio 3. Autorretrato</itunes:title>
+            <description>
+                <![CDATA[<p>H&eacute;ctor y Ver&oacute;nica se mudan a su nueva casa, herencia de la madre del primero que, como ella, es pintor. Su madre, una famosa pintora muri&oacute; en su propio taller, pero H&eacute;ctor cree que el ambiente puede jugar a su favor y desbloquear su destreza con el pincel.&nbsp;</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>H&eacute;ctor y Ver&oacute;nica se mudan a su nueva casa, herencia de la madre del primero que, como ella, es pintor. Su madre, una famosa pintora muri&oacute; en su propio taller, pero H&eacute;ctor cree que el ambiente puede jugar a su favor y desbloquear su destreza con el pincel.&nbsp;</p>]]>
+            </content:encoded>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:season>1</itunes:season>
+            <itunes:episode>3</itunes:episode>
+            <itunes:author>Podium Podcast</itunes:author>
+            <itunes:image href="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e405944a-39ea-4033-aa31-b30100807146/image.jpg?t=1750353121&amp;size=Large"/>
+            <media:content url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e405944a-39ea-4033-aa31-b30100807146/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" type="audio/mpeg">
+                <media:player url="https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-3-autorretrato/embed"/>
+            </media:content>
+            <media:content url="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e405944a-39ea-4033-aa31-b30100807146/image.jpg?t=1750353121&amp;size=Large" type="image/jpeg"/>
+            <guid isPermaLink="false">e405944a-39ea-4033-aa31-b30100807146</guid>
+            <omny:clipId>e405944a-39ea-4033-aa31-b30100807146</omny:clipId>
+            <pubDate>Fri, 20 Jun 2025 04:00:00 +0000</pubDate>
+            <itunes:duration>1489</itunes:duration>
+            <enclosure url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/e405944a-39ea-4033-aa31-b30100807146/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" length="23880341" type="audio/mpeg"/>
+            <link>https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-3-autorretrato</link>
+        </item>
+        <item>
+            <title>Episodio 2. La cena </title>
+            <itunes:title>Episodio 2. La cena </itunes:title>
+            <description>
+                <![CDATA[<p>La navidad es una fecha importante para Ra&uacute;l. Quiere que todo sea perfecto. La cena, la m&uacute;sica, la conversaci&oacute;n con su familia... pero hay algo que tensa el ambiente. &iquest;Conseguir&aacute; Ra&uacute;l mantener unida a su familia perfecta?</p> <p>En este episodio han participado:</p> <ul> <li>Carlos Pern&iacute;as</li> <li>Ainoa Miguel</li> <li>Juan Navarro</li> <li>Ruth Nieto</li> <li>Luis Alberto Mart&iacute;n</li> <li>Vivian Jimeno</li> <li>Helena Ovalle</li> </ul> <p>&nbsp;</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>La navidad es una fecha importante para Ra&uacute;l. Quiere que todo sea perfecto. La cena, la m&uacute;sica, la conversaci&oacute;n con su familia... pero hay algo que tensa el ambiente. &iquest;Conseguir&aacute; Ra&uacute;l mantener unida a su familia perfecta?</p> <p>En este episodio han participado:</p> <ul> <li>Carlos Pern&iacute;as</li> <li>Ainoa Miguel</li> <li>Juan Navarro</li> <li>Ruth Nieto</li> <li>Luis Alberto Mart&iacute;n</li> <li>Vivian Jimeno</li> <li>Helena Ovalle</li> </ul> <p>&nbsp;</p>]]>
+            </content:encoded>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:season>1</itunes:season>
+            <itunes:episode>2</itunes:episode>
+            <itunes:author>Podium Podcast</itunes:author>
+            <itunes:image href="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/b5d77f95-f94a-48a7-8389-b2fa00e9e083/image.jpg?t=1749738315&amp;size=Large"/>
+            <media:content url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/b5d77f95-f94a-48a7-8389-b2fa00e9e083/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" type="audio/mpeg">
+                <media:player url="https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-2-la-cena/embed"/>
+            </media:content>
+            <media:content url="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/b5d77f95-f94a-48a7-8389-b2fa00e9e083/image.jpg?t=1749738315&amp;size=Large" type="image/jpeg"/>
+            <guid isPermaLink="false">b5d77f95-f94a-48a7-8389-b2fa00e9e083</guid>
+            <omny:clipId>b5d77f95-f94a-48a7-8389-b2fa00e9e083</omny:clipId>
+            <pubDate>Fri, 13 Jun 2025 04:00:00 +0000</pubDate>
+            <itunes:duration>1026</itunes:duration>
+            <enclosure url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/b5d77f95-f94a-48a7-8389-b2fa00e9e083/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" length="16480397" type="audio/mpeg"/>
+            <link>https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-2-la-cena</link>
+        </item>
+        <item>
+            <title>Episodio 1. El influencer</title>
+            <itunes:title>Episodio 1. El influencer</itunes:title>
+            <description>
+                <![CDATA[<p>Iv&aacute;n es streamer. Cuenta con una comprometida comunidad que sigue fielmente sus directos a trav&eacute;s de una plataforma de video. La actividad principal del canal ahora mismo son las reconstrucciones: de la ciudad y de sus vecinos. Y para darle realismo a una ciudad, &iquest;qu&eacute; es fundamental?</p> <p>En este episodio han participado:</p> <ul> <li><strong>Jorge Garrido como Iv&aacute;n</strong></li> <li><strong>Salvi Garrido como pizzero</strong></li> <li><strong>Ana Gonz&aacute;lez como chica del s&oacute;tano</strong></li> <li><strong>Stiff Sulivan como chico del s&oacute;tano</strong></li> </ul> <p>&nbsp;</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>Iv&aacute;n es streamer. Cuenta con una comprometida comunidad que sigue fielmente sus directos a trav&eacute;s de una plataforma de video. La actividad principal del canal ahora mismo son las reconstrucciones: de la ciudad y de sus vecinos. Y para darle realismo a una ciudad, &iquest;qu&eacute; es fundamental?</p> <p>En este episodio han participado:</p> <ul> <li><strong>Jorge Garrido como Iv&aacute;n</strong></li> <li><strong>Salvi Garrido como pizzero</strong></li> <li><strong>Ana Gonz&aacute;lez como chica del s&oacute;tano</strong></li> <li><strong>Stiff Sulivan como chico del s&oacute;tano</strong></li> </ul> <p>&nbsp;</p>]]>
+            </content:encoded>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:season>1</itunes:season>
+            <itunes:episode>1</itunes:episode>
+            <itunes:author>Podium Podcast</itunes:author>
+            <itunes:image href="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ca2c05de-8e0d-42df-9be0-b2f3007de03b/image.jpg?t=1749109828&amp;size=Large"/>
+            <media:content url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ca2c05de-8e0d-42df-9be0-b2f3007de03b/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" type="audio/mpeg">
+                <media:player url="https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-1-el-influencer/embed"/>
+            </media:content>
+            <media:content url="https://www.omnycontent.com/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ca2c05de-8e0d-42df-9be0-b2f3007de03b/image.jpg?t=1749109828&amp;size=Large" type="image/jpeg"/>
+            <guid isPermaLink="false">ca2c05de-8e0d-42df-9be0-b2f3007de03b</guid>
+            <omny:clipId>ca2c05de-8e0d-42df-9be0-b2f3007de03b</omny:clipId>
+            <pubDate>Fri, 06 Jun 2025 04:00:00 +0000</pubDate>
+            <itunes:duration>1138</itunes:duration>
+            <enclosure url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ca2c05de-8e0d-42df-9be0-b2f3007de03b/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" length="18278235" type="audio/mpeg"/>
+            <link>https://omny.fm/shows/la-cumbre-de-los-horrores/episodio-1-el-influencer</link>
+        </item>
+        <item>
+            <title>La cumbre de los horrores. Estreno el 6 de junio - Trailer</title>
+            <itunes:title>La cumbre de los horrores. Estreno el 6 de junio - Trailer</itunes:title>
+            <description>
+                <![CDATA[<p>"La Cumbre de los Horrores" es una serie antol&oacute;gica de terror en formato audio donde cada episodio te sumerge en una nueva pesadilla. No hay continuidad entre cap&iacute;tulos, pero todos comparten un mismo prop&oacute;sito: inquietarte, desestabilizarte y envolverte en atm&oacute;sferas tan perturbadoras como irresistibles.</p> <p>Los personajes no pueden verte, pero t&uacute; est&aacute;s all&iacute;: en la misma habitaci&oacute;n, en el mismo susurro, testigo de lo que nadie deber&iacute;a presenciar.</p> <p>Una ficci&oacute;n sonora original de Podium Podcast. Escrita por Stiff Sulivan, dirigida por Jes&uacute;s Blanqui&ntilde;o y con dise&ntilde;o sonoro de Ignacio Cantisano.&nbsp;</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>"La Cumbre de los Horrores" es una serie antol&oacute;gica de terror en formato audio donde cada episodio te sumerge en una nueva pesadilla. No hay continuidad entre cap&iacute;tulos, pero todos comparten un mismo prop&oacute;sito: inquietarte, desestabilizarte y envolverte en atm&oacute;sferas tan perturbadoras como irresistibles.</p> <p>Los personajes no pueden verte, pero t&uacute; est&aacute;s all&iacute;: en la misma habitaci&oacute;n, en el mismo susurro, testigo de lo que nadie deber&iacute;a presenciar.</p> <p>Una ficci&oacute;n sonora original de Podium Podcast. Escrita por Stiff Sulivan, dirigida por Jes&uacute;s Blanqui&ntilde;o y con dise&ntilde;o sonoro de Ignacio Cantisano.&nbsp;</p>]]>
+            </content:encoded>
+            <itunes:episodeType>trailer</itunes:episodeType>
+            <itunes:season>1</itunes:season>
+            <itunes:author>Podium Podcast</itunes:author>
+            <itunes:image href="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/image.jpg?t=1748862164&amp;size=Large"/>
+            <media:content url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ef5fd4da-9cb2-424b-b445-b2f201081ad2/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" type="audio/mpeg">
+                <media:player url="https://omny.fm/shows/la-cumbre-de-los-horrores/la-cumbre-de-los-horrores-estreno-el-6-de-junio-trailer/embed"/>
+            </media:content>
+            <media:content url="https://www.omnycontent.com/d/playlist/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4/image.jpg?t=1748862164&amp;size=Large" type="image/jpeg"/>
+            <guid isPermaLink="false">ef5fd4da-9cb2-424b-b445-b2f201081ad2</guid>
+            <omny:clipId>ef5fd4da-9cb2-424b-b445-b2f201081ad2</omny:clipId>
+            <pubDate>Wed, 04 Jun 2025 16:04:31 +0000</pubDate>
+            <itunes:duration>65</itunes:duration>
+            <enclosure url="https://traffic.omny.fm/d/clips/2446592a-b80e-4d28-a4fd-ae4c0140ac11/b6ea43af-e96c-4513-accb-b2f000b57974/ef5fd4da-9cb2-424b-b445-b2f201081ad2/audio.mp3?utm_source=Podcast&amp;in_playlist=5f3d4c16-3e5c-4455-ab8f-b2f000b57ff4" length="1110219" type="audio/mpeg"/>
+            <link>https://omny.fm/shows/la-cumbre-de-los-horrores/la-cumbre-de-los-horrores-estreno-el-6-de-junio-trailer</link>
+        </item>
+    </channel>
+</rss>
