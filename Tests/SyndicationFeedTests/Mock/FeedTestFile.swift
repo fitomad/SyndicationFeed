@@ -26,6 +26,10 @@ extension FeedTestFile {
 	static var rss0_92: String { contentOf(file: "sample-rss-092") }
 	static var rss2_00: String { contentOf(file: "sample-rss-2") }
 	static var applePodcast: String { contentOf(file: "iTunes") }
+	static var laCumbreDeLosHorrores: String { contentOf(file: "la-cumbre-de-los-horrores") }
+	static var operacionMoon: String { contentOf(file: "operacion-moon") }
+	static var elenaEnElPaisDeLosHorrores: String { contentOf(file: "elena-en-el-pais-de-los-horrores") }
+	static var losersClub: String { contentOf(file: "losers-club") }
 }
 
 extension FeedTestFile {
