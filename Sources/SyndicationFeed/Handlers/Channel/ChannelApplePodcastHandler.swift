@@ -37,6 +37,10 @@ final class ChannelApplePodcastHandler: TagHandler {
 				details.isComplete = text.lowercased() == "yes"
 			case Apple.ApplePodcastsVerify.tagName:
 				details.applePodcastVerify = text
+			case Apple.Summary.tagName:
+				details.summary = text
+			case Apple.Subtitle.tagName:
+				details.subtitle = text
 			default:
 				try nextHandler?.processTag(tagName, text: text, withAttributes: attributesDict)
 		}

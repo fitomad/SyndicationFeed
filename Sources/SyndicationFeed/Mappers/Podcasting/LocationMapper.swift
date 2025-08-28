@@ -18,7 +18,8 @@ struct LocationMapper {
 		}
 		
 		if let coordinatesContent = attributes[Podcasting.Location.AttributeKeys.geo.rawValue] {
-			let coordinates = coordinatesContent.split(separator: ",")
+			let coordinatesValues = coordinatesContent.replacingOccurrences(of: "geo:", with: "")
+			let coordinates = coordinatesValues.split(separator: ",")
 			
 			if let latitude = Double(coordinates[0]),
 			   let longitude = Double(coordinates[1])
