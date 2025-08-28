@@ -67,7 +67,7 @@ enum Podcasting {
 		
 		enum AttributeKeys: String {
 			case url = "url"
-			case pubdate = "pubDate"
+			case pubdate = "pubdate"
 			case length = "length"
 			case type = "type"
 			case season = "season"

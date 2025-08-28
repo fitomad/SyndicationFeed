@@ -20,7 +20,8 @@ final class ChannelPodcastingHandler: TagHandler {
 		switch tagName {
 			case Podcasting.Block.tagName:
 				let mapper = BlockMapper()
-				podcasting.block = mapper.mapToBlock(using: attributesDict, status: text)
+				let block = mapper.mapToBlock(using: attributesDict, status: text)
+				addBlock(block)
 			case Podcasting.Chat.tagName:
 				let mapper = ChatMapper()
 				podcasting.chat = try? mapper.mapToChat(using: attributesDict)
@@ -129,6 +130,14 @@ final class ChannelPodcastingHandler: TagHandler {
 		}
 		
 		podcasting.txts?.append(txt)
+	}
+	
+	private func addBlock(_ block: Block) {
+		if podcasting.blocks == nil {
+			podcasting.blocks = [Block]()
+		}
+		
+		podcasting.blocks?.append(block)
 	}
 }
 

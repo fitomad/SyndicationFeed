@@ -19,7 +19,9 @@ enum Apple {
 			Apple.NewFeedURL.tagName,
 			Apple.Block.tagName,
 			Apple.Complete.tagName,
-			Apple.ApplePodcastsVerify.tagName
+			Apple.ApplePodcastsVerify.tagName,
+			Apple.Summary.tagName,
+			Apple.Subtitle.tagName
 		]
 	}
 	

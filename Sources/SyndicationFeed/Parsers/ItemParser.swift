@@ -24,6 +24,7 @@ final class ItemParser: NSObject {
 	private var rootParser: XMLParser?
 	private var nestedXMLDelegate: (any XMLParserDelegate)?
 	
+	private var currentTag = ""
 	private var currentCharacters = ""
 	private var currentAttributes = [String : String]()
 	
@@ -64,6 +65,7 @@ extension ItemParser: XMLParserDelegate {
 	func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 		currentCharacters = ""
 		currentAttributes = attributeDict
+		currentTag = elementName
 		
 		if elementName == Podcasting.AlternateEnclosure.tagName {
 			let alternateEnclosureParser = AlternateEnclosureParser(rootXMLDelegate: self, rootParser: rootParser)
@@ -102,7 +104,23 @@ extension ItemParser: XMLParserDelegate {
 	}
 	
 	func parser(_ parser: XMLParser, foundCharacters string: String) {
-		currentCharacters.append(string)
+		let elementString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+		
+		if elementString.count > 0 {
+			currentCharacters.append(string)
+		}
+	}
+	
+	func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+		guard var string = String(data: CDATABlock, encoding: .utf8) else {
+			return
+		}
+		
+		string = string.trimmingCharacters(in: .whitespacesAndNewlines)
+		
+		if string.count > 0 {
+			currentCharacters.append(string)
+		}
 	}
 }
 

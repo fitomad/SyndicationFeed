@@ -35,7 +35,7 @@ public struct Channel: Sendable {
 
 extension Channel {
 	public struct Podcasting: Sendable {
-		public internal(set) var block: Block?
+		public internal(set) var blocks: [Block]?
 		public internal(set) var chat: Chat?
 		public internal(set) var funding: Funding?
 		public internal(set) var guid: UUID?
@@ -69,5 +69,7 @@ extension Channel {
 		public internal(set) var isBlocked: Bool?
 		public internal(set) var isComplete: Bool?
 		public internal(set) var applePodcastVerify: String?
+		public internal(set) var summary: String?
+		public internal(set) var subtitle: String?
 	}
 }

@@ -129,7 +129,23 @@ extension ChannelParser: XMLParserDelegate {
 	}
 	
 	public func parser(_ parser: XMLParser, foundCharacters string: String) {
-		currentCharacters.append(string)
+		let elementString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+		
+		if elementString.count > 0 {
+			currentCharacters.append(string)
+		}
+	}
+	
+	public func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
+		guard var string = String(data: CDATABlock, encoding: .utf8) else {
+			return
+		}
+		
+		string = string.trimmingCharacters(in: .whitespacesAndNewlines)
+		
+		if string.count > 0 {
+			currentCharacters.append(string)
+		}
 	}
 	
 	public func parser(_ parser: XMLParser, parseErrorOccurred parseError: any Error) {
