@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class SyndicationFeed: SyndicationFeedService {
+public final class SyndicationFeed: SyndicationFeedProvider {
 	private var parser: SyndicationFeedParser?
 	
 	// I hate empty functions so...
@@ -17,7 +17,7 @@ public final class SyndicationFeed: SyndicationFeedService {
 	}
 	
 	public func fetchFeedFrom(url: URL) async throws(SyndicationFeedError) -> FeedResult {
-		parser = try SyndicationFeedParser(url: url)
+		parser = try await SyndicationFeedParser(url: url)
 		let feedResult = try await parser?.parse()
 		
 		guard let feedResult else {

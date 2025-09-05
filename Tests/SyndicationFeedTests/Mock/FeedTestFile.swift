@@ -31,6 +31,8 @@ extension FeedTestFile {
 	static var elenaEnElPaisDeLosHorrores: String { contentOf(file: "elena-en-el-pais-de-los-horrores") }
 	static var losersClub: String { contentOf(file: "losers-club") }
 	static var strawberrySpring: String { contentOf(file: "Strawberry-Spring") }
+	static var occasionallyThinking: String { contentOf(file: "Occasionally-Thinking") }
+	static var pepites: String { contentOf(file: "pepites") }
 }
 
 extension FeedTestFile {

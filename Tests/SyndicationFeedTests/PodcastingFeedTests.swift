@@ -248,6 +248,23 @@ struct PodcastingFeedTests {
 		#expect(channel.podcasting?.liveItems?.first?.links?.first?.media == "YouTube!")
 		#expect(channel.podcasting?.liveItems?.first?.links?.first?.link.absoluteString == "https://youtube.com/pc20/livestream")
 	}
+	
+	@Test("Feed file with XML headers", .tags(.podcastingNamespace))
+	func testWithXmlHeaders() async throws {
+		guard let feedData = FeedTestFile.pepites.data(using: .utf8) else {
+			throw FeedTestFile.Failure.malformedContent
+		}
+		
+		let parser = SyndicationFeedParser(data: feedData)
+		let result = try await parser.parse()
+		let channel = result.channel
+		
+		#expect(channel.title == "Pépites et Nuggets - Le podcast!")
+		#expect(channel.link?.absoluteString == "http://pepitesetnuggets.com/")
+		#expect(channel.description == "On fait des vidéos de jeux mais parfois on cause simplement... de jeux vidéo!")
+		#expect(channel.language == "fr-FR")
+		#expect(channel.copyright == "© 2016 Pépites et Nuggets")
+	}
 }
 
 extension Tag {

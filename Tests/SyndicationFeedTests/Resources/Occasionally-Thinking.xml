@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- generator="Podcast Generator 2.5" -->
+	<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Occasionally Thinking, Aloud</title>
+		<link>http://occasionallythinking.org/podcast/</link>
+		<atom:link href="http://occasionallythinking.org/podcast/feed.xml" rel="self" type="application/rss+xml" />
+		<description>Occasionally Thinking is a joint effort by Matt Jacobs and Suvin Mehta to bring exciting and often overlooked science stories to the public.</description>
+		<generator>Podcast Generator 2.5 - http://podcastgen.sourceforge.net</generator>
+		<lastBuildDate>Thu, 04 Sep 2025 22:21:30 -0700</lastBuildDate>
+		<language>en</language>
+		<copyright>Your copyright notice</copyright>
+		<itunes:image href="http://occasionallythinking.org/podcast/images/itunes_image.png" />
+		<image>
+		<url>http://occasionallythinking.org/podcast/images/itunes_image.png</url>
+		<title>Occasionally Thinking, Aloud</title>
+		<link>http://occasionallythinking.org/podcast/</link>
+		</image>
+		<itunes:summary>Occasionally Thinking is a joint effort by Matt Jacobs and Suvin Mehta to bring exciting and often overlooked science stories to the public.</itunes:summary>
+		<itunes:subtitle>Nurture Your Reason</itunes:subtitle>
+		<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+		<itunes:owner>
+		<itunes:name>Matt Jacobs &amp; Suvin Mehta</itunes:name>
+		<itunes:email>matt@occasionallythinking.com</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>no</itunes:explicit>
+		
+		<itunes:category text="Science &amp; Medicine"></itunes:category>
+		<itunes:category text="Education"></itunes:category>
+		<itunes:category text="Society &amp; Culture"></itunes:category>
+		
+				<item>
+				<title>The Echoes of a Dying Star</title>
+				<itunes:subtitle>Why are we here? What happens when we die?</itunes:subtitle>
+				<itunes:summary>This introspective episode is a reading of one of our posts about existence and the death of the universe.</itunes:summary>
+				<description>Why are we here? What happens when we die?</description>
+				<link>http://occasionallythinking.org/podcast/?name=2018-08-24_echos_of_a_dying_star_final.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2018-08-24_echos_of_a_dying_star_final.mp3" length="8905449" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2018-08-24_echos_of_a_dying_star_final.mp3</guid>
+				<itunes:duration>5:04</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:keywords>science, existence, universe, philosophy</itunes:keywords>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Fri, 24 Aug 2018 10:32:56 -0700</pubDate>
+				</item>
+				
+				<item>
+				<title>A Thought On Self Reflexive Skepticism [re-recorded]</title>
+				<itunes:subtitle>An update to an older recording about metacognition.</itunes:subtitle>
+				<itunes:summary>Remember to know what you do, and what you do not, know.</itunes:summary>
+				<description>An update to an older recording about metacognition.</description>
+				<link>http://occasionallythinking.org/podcast/?name=2016-12-03_a_thought_on_self_reflexive_skepticism_no_backing.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2016-12-03_a_thought_on_self_reflexive_skepticism_no_backing.mp3" length="5003121" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2016-12-03_a_thought_on_self_reflexive_skepticism_no_backing.mp3</guid>
+				<itunes:duration>2:05</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:keywords>science, philosophy</itunes:keywords>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Sat, 03 Dec 2016 14:31:21 -0800</pubDate>
+				</item>
+				
+				<item>
+				<title>The Robotic Dawn</title>
+				<itunes:subtitle>Part one of a series on the Robotic Revolution</itunes:subtitle>
+				<itunes:summary>This episode is going to talk about what it means to be human, and what it means for our species when we become obsolete. Our technology is advancing at an unprecedented rate, how will this affect us? Are we doomed, or are we approaching a turning point in human civilization?</itunes:summary>
+				<description>Part one of a series on the Robotic Revolution</description>
+				<link>http://occasionallythinking.org/podcast/?name=2016-12-03_robotic_dawn_solo_recording_processed.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2016-12-03_robotic_dawn_solo_recording_processed.mp3" length="49016319" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2016-12-03_robotic_dawn_solo_recording_processed.mp3</guid>
+				<itunes:duration>20:25</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:keywords>science, technology, futurism, singularity</itunes:keywords>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Sat, 03 Dec 2016 01:44:00 -0800</pubDate>
+				</item>
+				
+				<item>
+				<title>Podcast 8-23-15</title>
+				<itunes:subtitle>Our news review pilot</itunes:subtitle>
+				<itunes:summary>This episode is a pilot for our more in depth and frequent news item review segments. With a bad skype call and cheap microphones, lets see if we can't still make a coherent episode!</itunes:summary>
+				<description>Our news review pilot</description>
+				<link>http://occasionallythinking.org/podcast/?name=2016-12-02_podcast_recording_8-23-15_edited.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2016-12-02_podcast_recording_8-23-15_edited.mp3" length="82056064" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2016-12-02_podcast_recording_8-23-15_edited.mp3</guid>
+				<itunes:duration>34:11</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:keywords>Science, technology</itunes:keywords>
+				<itunes:explicit>yes</itunes:explicit>
+				<pubDate>Fri, 02 Dec 2016 16:14:00 -0800</pubDate>
+				</item>
+				
+				<item>
+				<title>A man with a with a gun - A  man with a sneeze</title>
+				<itunes:subtitle>A dramatized reading of a story originally published on my personal site.</itunes:subtitle>
+				<itunes:summary>This is a reading of the story A man with a gun - A man with a sneeze. The story was originally published on my personal website, then was later reposted onto Occasionally Thinking.
+The recent measles outbreak has been in the news a lot the last few months. Just about every single news outlet and blog in the country has written on the topic. My degree is specifically “human biology”, so I have strong opinions about how public health and disease should be treated. Whether I am preaching to the choir, or you are still certain that you should have personal choice in the matter, read along and we will go over some of the talking points.</itunes:summary>
+				<description>A dramatized reading of a story originally published on my personal site.</description>
+				<link>http://occasionallythinking.org/podcast/?name=2015-05-31_vaccines_intro.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2015-05-31_vaccines_intro.mp3" length="5206741" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2015-05-31_vaccines_intro.mp3</guid>
+				<itunes:duration>5:25</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:keywords>measles, vaccines, science, medicine</itunes:keywords>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Sun, 31 May 2015 14:42:00 -0700</pubDate>
+				</item>
+				
+				<item>
+				<title>Mitochondria, And Your Other DNA</title>
+				<itunes:subtitle>A story of early origins, and your ancient other half.</itunes:subtitle>
+				<itunes:summary>The mitochondrion is, in my opinion, one of the most fascinating and incredible organelles in our cells. Really, I promise that mitochondria are going to surprise you. Stick with me here and I’ll try to tell you a story about mitochondria, and about your own body, that you likely have not heard before.</itunes:summary>
+				<description>A story of early origins, and your ancient other half.</description>
+				<link>http://occasionallythinking.org/podcast/?name=2015-05-30_mitochondria_and_your_other_dna.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2015-05-30_mitochondria_and_your_other_dna.mp3" length="25470275" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2015-05-30_mitochondria_and_your_other_dna.mp3</guid>
+				<itunes:duration>26:32</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Sat, 30 May 2015 17:40:11 -0700</pubDate>
+				</item>
+				
+				<item>
+				<title>Intro</title>
+				<itunes:subtitle>Welcome to The Occasionally Thinking Podcast!</itunes:subtitle>
+				<itunes:summary>A very brief introduction from creator Matt Jacobs about the podcast.</itunes:summary>
+				<description>Welcome to The Occasionally Thinking Podcast!</description>
+				<link>http://occasionallythinking.org/podcast/?name=2015-05-30_intro_episode.mp3</link>
+				<enclosure url="http://occasionallythinking.org/podcast/media/2015-05-30_intro_episode.mp3" length="1141681" type="audio/mpeg"/>
+				<guid>http://occasionallythinking.org/podcast/?name=2015-05-30_intro_episode.mp3</guid>
+				<itunes:duration>1:11</itunes:duration>
+				<author>matt@occasionallythinking.com (Matt Jacobs &amp; Suvin Mehta)</author>
+				<itunes:author>Matt Jacobs &amp; Suvin Mehta</itunes:author>
+				<itunes:explicit>no</itunes:explicit>
+				<pubDate>Sat, 30 May 2015 17:05:56 -0700</pubDate>
+				</item>
+				
+	</channel>
+	</rss>

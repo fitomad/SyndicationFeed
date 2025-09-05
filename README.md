@@ -263,6 +263,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Version history
 
+### 0.9.3
+
+- The `SyndicationFeedService` protocol renamed to `SyndicationFeedProvider`
+- Fetch RSS feed using an URL now uses the `URLSession` `data` function instead of the `Data` intializer
+
 ### 0.9.0
 
 - Support for...

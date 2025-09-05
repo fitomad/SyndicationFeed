@@ -8,12 +8,21 @@ final class SyndicationFeedParser {
 	private var channel: Channel?
 	private var parsingErrors: [SyndicationFeedError]?
 	
-	convenience init(url: URL) throws(SyndicationFeedError) {
-		guard let data = try? Data(contentsOf: url) else {
+	convenience init(url: URL) async throws(SyndicationFeedError) {
+		do {
+			let (data, response) = try await URLSession.shared.data(from: url)
+			
+			guard let httpResponse =  response as? HTTPURLResponse,
+				  httpResponse.statusCode == 200
+			else
+			{
+				throw SyndicationFeedError.contentNotFound
+			}
+			
+			self.init(data: data)
+		} catch {
 			throw .contentNotFound
 		}
-		
-		self.init(data: data)
 	}
 	
 	convenience init(content: String) throws(SyndicationFeedError) {

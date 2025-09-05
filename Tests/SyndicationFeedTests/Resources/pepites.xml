@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://pepitesetnuggets.com/wp-content/plugins/seriously-simple-podcasting/templates/feed-stylesheet.xsl"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+	>
+
+	<channel>
+		<title>Pépites et Nuggets - Le podcast!</title>
+		<atom:link href="http://pepitesetnuggets.com/?feed=podcast" rel="self" type="application/rss+xml" />
+		<link>http://pepitesetnuggets.com/</link>
+		<description>On fait des vidéos de jeux mais parfois on cause simplement... de jeux vidéo!</description>
+		<lastBuildDate>Tue, 30 Aug 2016 21:45:50 +0000</lastBuildDate>
+		<language>fr-FR</language>
+		<copyright>© 2016 Pépites et Nuggets</copyright>
+		<itunes:subtitle>Des pépites de jeux vidéo</itunes:subtitle>
+		<itunes:author>Quentin et Jérémie</itunes:author>
+				<googleplay:author>Quentin et Jérémie</googleplay:author>
+		<googleplay:email>onecutetshenji@gmail.com</googleplay:email>
+		<itunes:summary>On fait des vidéos de jeux mais parfois on cause simplement... de jeux vidéo!</itunes:summary>
+		<googleplay:description>On fait des vidéos de jeux mais parfois on cause simplement... de jeux vidéo!</googleplay:description>
+		<itunes:owner>
+			<itunes:name>Pépites et Nuggets</itunes:name>
+			<itunes:email>onecutetshenji@gmail.com</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>clean</itunes:explicit>
+		<googleplay:explicit>No</googleplay:explicit>
+		<itunes:image href="http://pepitesetnuggets.com/wp-content/uploads/2015/06/PNcoverr.png"></itunes:image>
+		<googleplay:image href="http://pepitesetnuggets.com/wp-content/uploads/2015/06/PNcoverr.png"></googleplay:image>
+		<image>
+			<url>http://pepitesetnuggets.com/wp-content/uploads/2015/06/PNcoverr.png</url>
+			<title>Pépites et Nuggets - Le podcast!</title>
+			<link>http://pepitesetnuggets.com/</link>
+		</image>
+		<itunes:category text="Games &amp; Hobbies">
+			<itunes:category text="Video Games"></itunes:category>
+		</itunes:category>
+	<generator>https://wordpress.org/?v=4.8.25</generator>
+		<item>
+			<title>Podcast 02 &#8211; P&#038;N les origines, Overwatch, Zombie Night Terror &#038; Inside</title>
+			<link>http://pepitesetnuggets.com/?podcast=podcast-02-pn-les-origines-overwatch-zombie-night-terror-inside</link>
+			<pubDate>Tue, 30 Aug 2016 21:36:43 +0000</pubDate>
+			<dc:creator>pepitesetnuggets</dc:creator>
+			<guid isPermaLink="false">http://pepitesetnuggets.com/?post_type=podcast&#038;p=247</guid>
+			<description><![CDATA[<p class="excerpt">Deuxième podcast, seulement une année après le premier !</p><p class="more-link-p"><a class="btn btn-default" href="http://pepitesetnuggets.com/?podcast=podcast-02-pn-les-origines-overwatch-zombie-night-terror-inside">Read more</a></p>]]></description>
+			<itunes:subtitle><![CDATA[Deuxième podcast, seulement une année après le premier !Read more]]></itunes:subtitle>
+															<content:encoded><![CDATA[<p>Deuxième podcast, seulement une année après le premier !</p>
+]]></content:encoded>
+			<itunes:summary><![CDATA[<p>Deuxième podcast, seulement une année après le premier !</p>
+]]></itunes:summary>
+			<googleplay:description><![CDATA[<p>Deuxième podcast, seulement une année après le premier !</p>
+]]></googleplay:description>
+						<enclosure url="http://pepitesetnuggets.com/wp-content/uploads/2016/08/Pepites-et-nuggets-On-cause-002.mp3" length="28853473" type="audio/mpeg"></enclosure>
+			<itunes:explicit>clean</itunes:explicit>
+			<googleplay:explicit>No</googleplay:explicit>
+			<itunes:block>no</itunes:block>
+			<googleplay:block>no</googleplay:block>
+			<itunes:duration>30:03</itunes:duration>
+			<itunes:author>pepitesetnuggets</itunes:author>
+		</item>
+		<item>
+			<title>Podcast 01 &#8211; GTA V, Dirty Bomb et Zelda</title>
+			<link>http://pepitesetnuggets.com/?podcast=podcast-01-gta-v-dirty-bomb-et-zelda</link>
+			<pubDate>Thu, 04 Jun 2015 08:01:50 +0000</pubDate>
+			<dc:creator>pepitesetnuggets</dc:creator>
+			<guid isPermaLink="false">http://pepitesetnuggets.com/?post_type=podcast&#038;p=122</guid>
+			<description><![CDATA[<p class="excerpt">Notre premier podcast !</p><p class="more-link-p"><a class="btn btn-default" href="http://pepitesetnuggets.com/?podcast=podcast-01-gta-v-dirty-bomb-et-zelda">Read more</a></p>]]></description>
+			<itunes:subtitle><![CDATA[Notre premier podcast !Read more]]></itunes:subtitle>
+															<content:encoded><![CDATA[<p>Notre premier podcast !</p>
+]]></content:encoded>
+			<itunes:summary><![CDATA[<p>Notre premier podcast !</p>
+]]></itunes:summary>
+			<googleplay:description><![CDATA[<p>Notre premier podcast !</p>
+]]></googleplay:description>
+						<enclosure url="http://pepitesetnuggets.com/wp-content/uploads/2015/06/Pepites-et-nuggets-On-cause-001.mp3" length="29590769" type="audio/mpeg"></enclosure>
+			<itunes:explicit>clean</itunes:explicit>
+			<googleplay:explicit>No</googleplay:explicit>
+			<itunes:block>no</itunes:block>
+			<googleplay:block>no</googleplay:block>
+			<itunes:duration>15:25</itunes:duration>
+			<itunes:author>pepitesetnuggets</itunes:author>
+		</item>
+	</channel>
+</rss>

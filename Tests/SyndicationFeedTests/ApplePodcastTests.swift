@@ -57,6 +57,35 @@ struct ApplePodcastTests {
 		#expect(secondItem.iTunes?.duration == ((10 * 60) + 24))
 		#expect(secondItem.iTunes?.isExplicit == false)
 	}
+	
+	@Test("Custom Apple podcast feed", .tags(.appleNamespace))
+	func customApplePodcastFeed() async throws {
+		guard let feedData = FeedTestFile.occasionallyThinking.data(using: .utf8) else {
+			throw FeedTestFile.Failure.malformedContent
+		}
+		
+		let parser = SyndicationFeedParser(data: feedData)
+		let result = try await parser.parse()
+		let channel = result.channel
+		
+		#expect(channel.iTunes != nil)
+		
+		#expect(channel.iTunes?.author != nil)
+		#expect(channel.iTunes?.author == "Matt Jacobs & Suvin Mehta")
+		
+		#expect(channel.iTunes?.summary?.starts(with: "Occasionally Thinking is a joint effort by Matt Jacobs and Suvin Mehta") ?? false)
+		
+		#expect(channel.iTunes?.subtitle == "Nurture Your Reason")
+		
+		#expect(channel.iTunes?.imageURL?.absoluteString == "http://occasionallythinking.org/podcast/images/itunes_image.png")
+		
+		#expect(channel.iTunes?.isExplicit == false)
+		
+		#expect(channel.iTunes?.categories?.count == 3)
+		#expect(channel.iTunes?.categories?.contains("Science & Medicine") ??  false)
+		#expect(channel.iTunes?.categories?.contains("Education") ?? false)
+		#expect(channel.iTunes?.categories?.contains("Society & Culture") ?? false)
+	}
 }
 
 extension Tag {

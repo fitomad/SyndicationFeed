@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol SyndicationFeedService {
+public protocol SyndicationFeedProvider {
 	func fetchFeedFrom(url: URL) async throws -> FeedResult
 	func fetchFeedFrom(content: String) async throws -> FeedResult
 	func fetchFeedFrom(data: Data) async throws -> FeedResult
