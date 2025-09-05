@@ -10,6 +10,7 @@ import Foundation
 public enum SyndicationFeedError: Error {
 	case malformedContent
 	case contentNotFound
+	case httpError(code: Int)
 	case unavailableTag(_ name: String, inElement: String)
 	case unavailableAttribute(_ name: String, inTag: String)
 	case malformedTagValue(_ value: String, tag: String)

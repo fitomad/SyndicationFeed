@@ -12,11 +12,17 @@ final class SyndicationFeedParser {
 		do {
 			let (data, response) = try await URLSession.shared.data(from: url)
 			
-			guard let httpResponse =  response as? HTTPURLResponse,
-				  httpResponse.statusCode == 200
-			else
-			{
+			guard let httpResponse =  response as? HTTPURLResponse else {
 				throw SyndicationFeedError.contentNotFound
+			}
+			
+			switch httpResponse.statusCode {
+				case 200:
+					self.init(data: data)
+				case 404:
+					throw SyndicationFeedError.contentNotFound
+				default:
+					throw SyndicationFeedError.httpError(code: httpResponse.statusCode)
 			}
 			
 			self.init(data: data)
